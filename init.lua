@@ -31,14 +31,17 @@ function open(name)
 end
 
 do -- app toggle
+    local app_man = require('modules.appman')
     local mode = f17_mode;
 
-    mode:bind({}, 'J', open("IntelliJ Idea"))
-    mode:bind({}, 'N', open("Notion"))
-    mode:bind({}, 'C', open("Google Chrome"))
-    mode:bind({}, 'T', open("iTerm"))
-    mode:bind({}, 'R', open("Reminders"))
-    mode:bind({}, 'I', open("Music"))
-    mode:bind({}, 'K', open("KakaoTalk"))
-    mode:bind({}, 'F', open("Firefox"))
+    mode:bind({}, 'J', app_man:toggle("IntelliJ Idea"))
+    mode:bind({}, 'N', app_man:toggle("Notion"))
+    mode:bind({}, 'C', app_man:toggle("Google Chrome"))
+    mode:bind({}, 'T', app_man:toggle("iTerm"))
+    mode:bind({}, 'R', app_man:toggle("Reminders"))
+    mode:bind({}, 'I', app_man:toggle("Music"))
+    mode:bind({}, 'K', app_man:toggle("KakaoTalk"))
+    mode:bind({}, 'F', app_man:toggle("Firefox"))
+    mode:bind({}, 'S', app_man:toggle("Slack"))
+    mode:bind({}, '/', app_man:toggle("Notes"))
 end
