@@ -13,7 +13,7 @@ function vimesc()
     hs.eventtap.keyStroke({}, 'right')
     hs.keycodes.currentSourceID(inputEnglish)
   end
-  hs.eventtap.keyStroke({}, 'escape')   
+  hs.eventtap.keyStroke({}, 'escape')
 end
 
 hs.hotkey.bind({}, 'f13', vimesc)
