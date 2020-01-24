@@ -1,3 +1,5 @@
+require('modules.inputsource_aurora')
+
 hs.hotkey.bind({'option', 'cmd'}, 'r', hs.reload)
 
 
