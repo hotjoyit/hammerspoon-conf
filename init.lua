@@ -13,10 +13,10 @@ function vimesc()
     hs.eventtap.keyStroke({}, 'right')
     hs.keycodes.currentSourceID(inputEnglish)
   end
-  hs.eventtap.keyStroke({'control'}, 'c')   
+  hs.eventtap.keyStroke({}, 'escape')   
 end
 
-hs.hotkey.bind({}, 'escape', vimesc)
+hs.hotkey.bind({}, 'f13', vimesc)
 
 hs.alert.show('Hammerspoon Reloaded')
 
