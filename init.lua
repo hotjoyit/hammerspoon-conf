@@ -40,6 +40,7 @@ do -- app toggle
     mode:bind({}, 'K', app_man:toggle("KakaoTalk"))
     mode:bind({}, 'F', app_man:toggle("Firefox"))
     mode:bind({}, 'S', app_man:toggle("Slack"))
+    mode:bind({}, 'T', app_man:toggle("Microsoft To Do"))
     mode:bind({}, '.', app_man:toggle("Notes"))
     mode:bind({}, '/', app_man:toggle("iTerm"))
 end
