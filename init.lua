@@ -44,6 +44,8 @@ do -- app toggle
     mode:bind({}, '.', app_man:toggle("Notes"))
     mode:bind({}, '/', app_man:toggle("iTerm"))
     mode:bind({}, 'M', app_man:toggle("MindNode"))
+    mode:bind({}, 'A', app_man:toggle("Calendar"))
+
 end
 
 do  -- winmove
