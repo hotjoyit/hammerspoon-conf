@@ -69,4 +69,25 @@ do  -- winmove
     mode:bind({}, '=', win_move.next_screen)
 end
 
+function right()
+    hs.eventtap.keyStroke({}, 'right')
+end
+function left()
+    hs.eventtap.keyStroke({}, 'left')
+end
+function up()
+    hs.eventtap.keyStroke({}, 'up')
+end
+function down()
+    hs.eventtap.keyStroke({}, 'down')
+end
+
+do -- move cursor
+    local mode = f17_mode
+    mode:bind({}, '\'', right)
+    mode:bind({}, ';', left)
+    mode:bind({}, '[', up)
+    mode:bind({}, '/', down)
+end
+
 hs.alert.show('Hammerspoon Reloaded')
