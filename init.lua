@@ -1,8 +1,10 @@
 require('modules.inputsource_aurora')
 
 hs.hotkey.bind({'option', 'cmd'}, 'r', hs.reload)
+local f16_mode = hs.hotkey.modal.new()
 local f17_mode = hs.hotkey.modal.new()
 
+hs.hotkey.bind({}, 'f16', function() f16_mode:enter() end, function() f16_mode:exit() end)
 hs.hotkey.bind({}, 'f17', function() f17_mode:enter() end, function() f17_mode:exit() end)
 
 function vimesc()
@@ -69,25 +71,18 @@ do  -- winmove
     mode:bind({}, '=', win_move.next_screen)
 end
 
-function right()
-    hs.eventtap.keyStroke({}, 'right')
-end
-function left()
-    hs.eventtap.keyStroke({}, 'left')
-end
-function up()
-    hs.eventtap.keyStroke({}, 'up')
-end
-function down()
-    hs.eventtap.keyStroke({}, 'down')
-end
-
 do -- move cursor
-    local mode = f17_mode
-    mode:bind({}, '\'', right)
-    mode:bind({}, ';', left)
-    mode:bind({}, '[', up)
-    mode:bind({}, '/', down)
+    local mode = f16_mode
+    local cur_move = require('modules.curmove')
+
+    mode:bind({}, '\'', cur_move.right)
+    mode:bind({}, ';', cur_move.left)
+    mode:bind({}, '[', cur_move.up)
+    mode:bind({}, '/', cur_move.down)
+    mode:bind({}, 'k', cur_move.home)
+    mode:bind({}, ',', cur_move._end)
+    mode:bind({}, 'l', cur_move.pageup)
+    mode:bind({}, '.', cur_move.pagedown)
 end
 
 hs.alert.show('Hammerspoon Reloaded')
