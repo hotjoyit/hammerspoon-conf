@@ -35,7 +35,7 @@ do -- app toggle
     local mode = f17_mode;
 
     mode:bind({}, 'J', app_man:toggle("IntelliJ Idea"))
-    mode:bind({}, 'N', app_man:toggle("Notion"))
+    mode:bind({}, 'N', app_man:toggle("Notes"))
     mode:bind({}, 'C', app_man:toggle("Google Chrome"))
     mode:bind({}, 'R', app_man:toggle("Reminders"))
     mode:bind({}, 'I', app_man:toggle("Music"))
