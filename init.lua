@@ -3,12 +3,12 @@ require('modules.inputsource_aurora')
 hs.hotkey.bind({'option', 'cmd'}, 'r', hs.reload)
 local f16_mode = hs.hotkey.modal.new()
 local f17_mode = hs.hotkey.modal.new()
+local inputEnglish = "com.apple.keylayout.ABC"
 
 hs.hotkey.bind({}, 'f16', function() f16_mode:enter() end, function() f16_mode:exit() end)
 hs.hotkey.bind({}, 'f17', function() f17_mode:enter() end, function() f17_mode:exit() end)
 
 function vimesc()
-  local inputEnglish = "com.apple.keylayout.ABC"
   local input_source = hs.keycodes.currentSourceID()
 
   if not (input_source == inputEnglish) then
